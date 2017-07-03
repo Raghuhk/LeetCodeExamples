@@ -8,12 +8,26 @@ import example.easy.Palindrome;
 
 public class TestPalindrome {
 
+		
 	@Test
-	public void test() {
-		assertEquals(Palindrome.findNumberAtPosition(987654321, 1), 1);
-		assertEquals(Palindrome.findNumberAtPosition(987654321, 2), 2);
-		assertEquals(Palindrome.findNumberAtPosition(987654321, 3), 3);
-		assertEquals(Palindrome.findNumberAtPosition(987654321, 8), 8);
+	public void testFindLengthOfInt(){
+		assertEquals(1, Palindrome.findLengthOfInt(2));
+		assertEquals(5,Palindrome.findLengthOfInt(34643));
+		assertEquals(7,Palindrome.findLengthOfInt(-4534643));
+	}
+	
+	@Test
+	public void testFindNumberAtPosition(){
+		assertEquals(5, Palindrome.findNumberAtPosition(87654321,5));
+		assertEquals(8, Palindrome.findNumberAtPosition(87654321,8));
+		assertEquals(1, Palindrome.findNumberAtPosition(87654321,1));
+		
+	}
+	
+	@Test
+	public void testPalindrome(){
+		assertEquals(true,Palindrome.revisedIsPalindrome(123321));
+		assertEquals(false,Palindrome.revisedIsPalindrome(12345321));
 	}
 
 }

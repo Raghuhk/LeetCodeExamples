@@ -16,7 +16,22 @@ public class Palindrome {
 		return false;
 	}
 	
+	public static Boolean revisedIsPalindrome(int x){
+		int lengthOfInt = findLengthOfInt(x);
+		Boolean isPalindrome=true;
+		for(int i =1;i<=lengthOfInt/2;i++){
+			if(findNumberAtPosition(x, i)!=findNumberAtPosition(x,lengthOfInt+1-i)){
+				isPalindrome=false;
+				break;
+			}
+		}
+		return isPalindrome;
+	}
+	
 	public static int findNumberAtPosition(long number, int position){
+		if(number<0){
+			number= number*-1;
+		}
 		long multiplier = 10;
 		long divisor = 1;
 		for(int i =1;i<position;i++){
@@ -28,15 +43,18 @@ public class Palindrome {
 	}
 	
 	public static int findLengthOfInt(long number){
+		if(number<0){
+			number= number*-1;
+		}
 		long length=0;
-		int x;
-		for(int i = 1000000000, j=10;i>1;i=i/10, j--){
-			x = number%i;
-			if(x>0){
+		for(int i = 1000000000, j=10;i>=1;i=i/10, j--){
+			if(number/i>0){
 				length = j;
+				break;
 			}
 			
 		}
+		return new Long(length).intValue();
 		
 	}
 	
