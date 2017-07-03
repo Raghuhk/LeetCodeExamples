@@ -29,5 +29,12 @@ public class TestPalindrome {
 		assertEquals(true,Palindrome.revisedIsPalindrome(123321));
 		assertEquals(false,Palindrome.revisedIsPalindrome(12345321));
 	}
+	
+	@Test
+	public void testPalindromeWithHints(){
+		//assertEquals(true,Palindrome.isPalindromeWithHints(123321));
+		assertEquals(true,Palindrome.isPalindromeWithHints(1410110141));
+		//assertEquals(false,Palindrome.isPalindromeWithHints(12345321));
+	}
 
 }

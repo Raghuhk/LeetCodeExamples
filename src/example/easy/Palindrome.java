@@ -17,6 +17,9 @@ public class Palindrome {
 	}
 	
 	public static Boolean revisedIsPalindrome(int x){
+		if(x<0){
+			return false;
+		}
 		int lengthOfInt = findLengthOfInt(x);
 		Boolean isPalindrome=true;
 		for(int i =1;i<=lengthOfInt/2;i++){
@@ -55,6 +58,32 @@ public class Palindrome {
 			
 		}
 		return new Long(length).intValue();
+		
+	}
+	
+	public static Boolean isPalindromeWithHints(int x){
+		if(x<0){
+			return false;
+		}
+		if(x==reverseNumber(x)){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
+	public static int reverseNumber(int input){
+		int reversedNumber=0;
+		int divisor = 1;
+		int inputForModification = input;
+		while(inputForModification>0){
+			reversedNumber = reversedNumber*10+inputForModification%10;
+			divisor = divisor*10;
+			inputForModification = inputForModification/10;
+		}
+		
+		return reversedNumber;
 		
 	}
 	
